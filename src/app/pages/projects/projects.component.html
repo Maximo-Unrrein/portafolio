@@ -1,0 +1,10 @@
+<div class="container-projects">
+  <div class="titles-and-dates">
+    @for (project of projects; track $index) {
+      <div class="project-row">
+        <a href="{{project.href}}">{{project.title}}</a>
+      </div>
+      <p>{{project.date.getFullYear()}} | <a href="">Más Detalles</a></p>
+    }
+  </div>
+</div>

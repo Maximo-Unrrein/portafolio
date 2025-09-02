@@ -1,0 +1,158 @@
+.workspace{
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;  
+  padding: 40px 50px 40px 50px; /* Padding en lugar de margin en el hijo */
+}
+.contents{
+  display: flex;
+  height: 100%;
+  /* top - right - bottom - left
+  margin: 10px; */
+  border: solid 1px;
+}
+
+.contents h1{
+  /* top - right - bottom - left */
+  margin: 20px 0px 0px 40px;
+  font-family: formula regular;
+  font-weight: 100;
+  font-size: 40px;
+}
+.contents h3{
+  /* top - right - bottom - left */
+  margin: 0px 0px 80px 40px;
+  font-family: 'agdasima', sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+}
+
+.buttons li{
+  list-style: none;
+  margin: 0px 0px 20px 40px;
+  /* font-family: 'poppins';
+  font-size: 15px; */
+
+  font-family: 'agdasima';
+  font-weight: 600;
+  font-size: 20px;
+}
+
+
+.title-and-buttons{
+  padding: 15px;
+  width: 50%;
+}
+
+.pages{
+  width: 50%;
+}
+
+
+/* ---------------------------------- */
+
+/* .buttons a.btn-selected{
+  text-decoration: underline;
+  color: rgb(42, 16, 104);
+}
+
+.buttons a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  transition: color 200ms ease; 
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  
+}
+
+
+.buttons a:hover {
+  color: rgba(0, 0, 0, 0.6);
+} */
+
+
+
+/* ---------------------------------- */
+
+
+
+/* Estilos para los enlaces */
+.buttons a {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 2px 0;
+  transition: color 0.3s ease;
+}
+
+/* Efecto hover: texto más claro */
+.buttons a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Subrayado elegante para elemento seleccionado */
+.buttons a.btn-selected {
+  color: #000000;
+  font-weight: 700;
+}
+
+.buttons a.btn-selected::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  animation: underlineAnimation 0.3s ease-out;
+}
+
+@keyframes underlineAnimation {
+  from {
+      transform: scaleX(0);
+  }
+  to {
+      transform: scaleX(1);
+  }
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+  .contents {
+      flex-direction: column;
+  }
+  
+  .title-and-buttons, .pages {
+      width: 100%;
+  }
+  
+  .pages {
+      border-left: none;
+      border-top: 1px solid #e0e0e0;
+  }
+}
+
+@media (max-width: 600px) {
+  .workspace {
+      padding: 20px;
+  }
+  
+  .contents h1 {
+      font-size: 32px;
+      margin-left: 20px;
+  }
+  
+  .contents h3 {
+      font-size: 18px;
+      margin-left: 20px;
+      margin-bottom: 50px;
+  }
+  
+  .buttons li {
+      margin-left: 30px;
+      font-size: 18px;
+  }
+}

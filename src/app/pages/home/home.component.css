@@ -1,0 +1,15 @@
+.container-home{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  width: 100%;
+  display: block;
+  padding: 80px;
+  font-family: 'agdasima';
+  font-size: 20px;
+}
