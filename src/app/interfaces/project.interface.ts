@@ -1,6 +1,9 @@
 export interface Project{
   title: string,
-  lenguages: string[],
+  languages: string[],
+  description: string,
   date: Date,
-  href: String
+  images: string[]
+  demoUrl: String,
+  githubUrl: string
 }

@@ -36,6 +36,12 @@
   font-weight: 100;
   font-family: 'formula regular';
   display: inline-block;
+  transition:  font-size 0.3s ease;
+}
+
+.project-row a:hover{
+  font-size: 30px;
+  transition:  font-size 0.3s ease;
 }
 
 /* año / meta info */
@@ -45,6 +51,15 @@ p {
   font-size: 14px;
   opacity: 0.7;
   margin-bottom: 15px;
+}
+
+.more-details{
+  color: rgb(103, 6, 128);
+  text-decoration: underline;
+}
+
+.more-details:hover{
+  cursor: pointer;
 }
 
 /* responsive: en pantallas chicas permití quiebre y menor tamaño */

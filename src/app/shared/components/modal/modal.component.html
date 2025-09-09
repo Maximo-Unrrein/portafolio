@@ -1,0 +1,8 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="onClose()">X</button>
+    <h2>{{ project()?.title }}</h2>
+    <p>{{ project()?.languages }}</p>
+    <!-- Más detalles del proyecto aquí -->
+  </div>
+</div>

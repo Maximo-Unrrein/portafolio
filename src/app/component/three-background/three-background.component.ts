@@ -1,5 +1,4 @@
-// three-background.component.ts
-import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, Injectable, inject } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild } from '@angular/core';
 import { ThreeSceneService } from '../../services/three-service.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { ThreeSceneService } from '../../services/three-service.service';
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1; /* Para que esté detrás del contenido */
+      z-index: -1;
     }
     canvas {
       display: block;

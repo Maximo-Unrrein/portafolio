@@ -1,6 +1,7 @@
 // three-scene.service.ts
 import { Injectable, ElementRef, NgZone } from '@angular/core';
 import * as THREE from 'three';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,39 +10,60 @@ export class ThreeSceneService {
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private renderer!: THREE.WebGLRenderer;
-  private plane!: any; // Usaremos any para simplificar, pero idealmente crearías una interfaz
+  private plane!: any;
   private clock!: THREE.Clock;
   private animationId!: number;
+
+  // Eventos para el preloader
+  loadingProgress$ = new BehaviorSubject<number>(0);
+  loadingComplete$ = new Subject<void>();
+  loadingError$ = new Subject<void>();
 
   constructor(private ngZone: NgZone) { }
 
   initializeScene(canvasElement: ElementRef): void {
-    // Inicializar escena, cámara y renderizador
-    this.scene = new THREE.Scene();
-    this.clock = new THREE.Clock();
+    try {
+      this.loadingProgress$.next(10);
+      
+      // Inicializar escena, cámara y renderizador
+      this.scene = new THREE.Scene();
+      this.clock = new THREE.Clock();
+      this.loadingProgress$.next(20);
 
-    this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-    this.camera.position.set(0, 16, 128);
-    this.camera.lookAt(new THREE.Vector3(0, 28, 0));
+      this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+      this.camera.position.set(0, 16, 128);
+      this.camera.lookAt(new THREE.Vector3(0, 28, 0));
+      this.loadingProgress$.next(30);
 
-    this.renderer = new THREE.WebGLRenderer({
-      canvas: canvasElement.nativeElement,
-      antialias: false,
-      alpha: true
-    });
-    this.renderer.setClearColor(0xeeeeee, 1.0);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer = new THREE.WebGLRenderer({
+        canvas: canvasElement.nativeElement,
+        antialias: false,
+        alpha: true
+      });
+      this.renderer.setClearColor(0xeeeeee, 1.0);
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.loadingProgress$.next(40);
 
-    // Crear el plano con el shader personalizado
-    this.createPlane();
+      // Crear el plano con el shader personalizado
+      this.createPlane();
+      this.loadingProgress$.next(70);
 
-    // Manejar redimensionamiento
-    window.addEventListener('resize', () => this.onWindowResize());
+      // Manejar redimensionamiento
+      window.addEventListener('resize', () => this.onWindowResize());
+      this.loadingProgress$.next(80);
 
-    // Iniciar el bucle de animación
-    this.ngZone.runOutsideAngular(() => {
-      this.animate();
-    });
+      // Iniciar el bucle de animación
+      this.ngZone.runOutsideAngular(() => {
+        this.animate();
+      });
+      
+      this.loadingProgress$.next(100);
+      this.loadingComplete$.next();
+
+    } catch (error) {
+      console.error('Error initializing Three.js:', error);
+      this.loadingError$.next();
+    }
   }
 
   private createPlane(): void {

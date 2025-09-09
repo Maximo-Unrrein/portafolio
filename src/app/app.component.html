@@ -1,18 +1,18 @@
 <!-- Preloader -->
-<div id="preloader">
-  <div class="loader">
+@if(isLoading){
+  <div class="preloader">
+    <div class="loader">
       <div class="loader-inner"></div>
       <div class="loader-inner"></div>
+    </div>
+    <div class="loader-text">CARGANDO RECURSOS</div>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="progressValue"></div>
+    </div>
   </div>
-  <div class="loader-text">CARGANDO RECURSOS</div>
-  <div class="progress-bar">
-      <div class="progress" id="progress"></div>
-  </div>
-</div>
+}
 
-<h3></h3>
-
-<div class="workspace">
+<div class="workspace" [class.hidden]="isLoading">
   <app-three-background></app-three-background> <!-- Fondo Three.js -->
 
 
