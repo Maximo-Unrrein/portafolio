@@ -1,0 +1,55 @@
+.container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.container-languages{
+  /* display: flex; */
+  margin: 30px;
+  backdrop-filter: blur(7px);
+  background-color: hsla(0, 0%, 0%, 0.05);
+  border-radius: 25px;
+}
+.container-languages h2{
+  /* display: flex; */
+  justify-content: center;
+  padding: 15px 0 0px 20px;
+  width: 100%;
+  font-family: 'Bebas Neue';
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.container-languages-icons {
+  display: flex;
+  /* justify-content: center; */
+  gap: 15px; /* Espacio entre elementos */
+  padding: 5px 20px 20px 20px;
+}
+
+/* Contenedor individual para cada tecnología */
+.container-languages-icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; /* Centrar verticalmente el contenido */
+  /* min-width: 80px;  */
+}
+
+.container-languages-icons img {
+  width: 45px; /* Tamaño ligeramente mayor para mejor visualización */
+  height: 45px;
+  object-fit: contain; /* Asegurar que la imagen se vea completa */
+  margin-bottom: 8px; /* Espacio entre imagen y texto */
+}
+
+.container-languages-icons h5 {
+  font-family: 'agdasima';
+  font-size: 18px; /* Tamaño de fuente ligeramente reducido */
+  font-weight: 100;
+  text-align: center; /* Asegurar que el texto esté centrado */
+  margin: 0; /* Eliminar márgenes por defecto */
+  word-break: break-word; /* Permitir que palabras largas se dividan */
+}

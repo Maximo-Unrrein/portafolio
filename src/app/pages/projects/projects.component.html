@@ -9,6 +9,6 @@
   </div>
 </div>
 
-@if(showModal){
-  <app-modal [project]="selectedProject!" (closeModal)="onCloseModal()"></app-modal>
+@if(isModalOpen){
+  <app-modal [project]="selectedProject!" [isOpen]="isModalOpen" (close)="onCloseModal()"></app-modal>
 }

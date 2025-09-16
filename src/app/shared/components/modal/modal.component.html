@@ -1,8 +1,32 @@
-<div class="modal-overlay" (click)="onClose()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="onClose()">X</button>
-    <h2>{{ project()?.title }}</h2>
-    <p>{{ project()?.languages }}</p>
-    <!-- Más detalles del proyecto aquí -->
+<div class="modal-overlay" 
+     [class.visible]="isVisible" 
+     [class.animating]="isAnimating"
+     (click)="onOverlayClick($event)">
+  
+  <div class="modal-content" [class.animating]="isAnimating">
+    <button class="close-button" (click)="closeModal()">&times;</button>
+    
+    <div class="modal-header">
+      <h2>{{ project()?.title }}</h2>
+    </div>
+    
+    <div class="modal-body">
+      <!-- <img [src]="project().image" [alt]="project()?.title" class="project-image"> -->
+      
+      <div class="project-details">
+        <h3>Tecnologías utilizadas</h3>
+        <div class="technologies">
+          @for (tech of project()?.languages; track $index) {
+            <span class="tech-tag">{{ tech }}</span>
+          }
+        </div>
+        
+        <p>{{ project()?.description }}</p>
+        <div class="project-links">
+          <a [href]="project()?.demoUrl" target="_blank" class="demo-link">Ver demo</a>
+          <a [href]="project()?.githubUrl" target="_blank" class="github-link">Código fuente</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

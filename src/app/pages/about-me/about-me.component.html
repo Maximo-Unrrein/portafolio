@@ -1,1 +1,76 @@
-<p>about-me works!</p>
+<div class="about-container">
+
+  <div class="bio-section">
+    <div class="bio-content">
+      <p>{{ bio }}</p>
+    </div>
+  </div>
+  <div class="buttons-s-exp-c">
+    <button [class.btn-disabled]="this.buttonSelected !== 'Courses'" (click)="changeList('Courses')">Courses</button>
+    <button [class.btn-disabled]="this.buttonSelected !== 'Experiences'" (click)="changeList('Experiences')">Experiences</button>
+    <button [class.btn-disabled]="this.buttonSelected !== 'Studies'" (click)="changeList('Studies')">Studies</button>
+  </div>
+  <div class="timeline-section">
+    
+    <div class="timeline">
+      @if(this.buttonSelected === 'Courses'){
+        <h2>Cursos</h2>
+        @for (item of this.courses; track item) {
+          <div class="timeline-item" [class.education]="item.type === 'education'" 
+              [class.experience]="item.type === 'experience'">
+            <!-- <div class="timeline-marker"></div> -->
+            <div class="timeline-content">
+              <div class="timeline-year">{{ item.year }}</div>
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <p class="timeline-description">{{ item.description }}</p>
+            </div>
+          </div>
+        }
+      }
+      @else if (this.buttonSelected === 'Experiences') {
+        <h2>Experiencias</h2>
+        @for (item of this.experiences; track item) {
+          <div class="timeline-item" [class.education]="item.type === 'education'" 
+              [class.experience]="item.type === 'experience'">
+            <!-- <div class="timeline-marker"></div> -->
+            <div class="timeline-content">
+              <div class="timeline-year">{{ item.year }}</div>
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <p class="timeline-description">{{ item.description }}</p>
+            </div>
+          </div>
+        }
+      }
+      @else {
+        <h2>Estudios</h2>
+        @for (item of this.studies; track item) {
+          <div class="timeline-item" [class.education]="item.type === 'education'" 
+              [class.experience]="item.type === 'experience'">
+            <!-- <div class="timeline-marker"></div> -->
+            <div class="timeline-content">
+              <div class="timeline-year">{{ item.year }}</div>
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <p class="timeline-description">{{ item.description }}</p>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+
+  <!-- <div class="skills-section">
+    <h2>Habilidades</h2>
+    <div class="skills-grid">
+      @for (category of skillCategories; track category) {
+        <div class="skill-category">
+          <h3>{{ category.name }}</h3>
+          <div class="skill-list">
+            @for (skill of category.skills; track skill) {
+              <span>{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div> -->
+</div>

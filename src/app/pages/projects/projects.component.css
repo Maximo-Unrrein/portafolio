@@ -28,6 +28,8 @@
   white-space: nowrap; /* evita que el título salte a la siguiente línea */
 }
 
+
+
 /* estilos del título */
 .project-row a {
   text-decoration: none;

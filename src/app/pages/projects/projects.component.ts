@@ -10,13 +10,14 @@ import { ModalComponent } from "../../shared/components/modal/modal.component";
 })
 export default class ProjectsComponent {
   selectedProject: Project | null = null;
-  showModal: boolean = false
+  isModalOpen: boolean = false;
+
 
   projects: Project[] = [
     {
       title: 'FRENDO',
       languages: ['c#', '.net', 'python'],
-      description: '',
+      description: 'Social Network with reference on Facebook',
       date: new Date('2022-08-01'),
       images: [],
       demoUrl: 'https://www.youtube.com/',
@@ -44,11 +45,10 @@ export default class ProjectsComponent {
 
   openModal(project: Project){
     this.selectedProject = project;
-    this.showModal = true;
+    this.isModalOpen = true;
   }
 
   onCloseModal(){
-    this.showModal = false;
-    this.selectedProject = null;
+    this.isModalOpen = false;
   }
 }

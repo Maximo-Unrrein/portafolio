@@ -61,7 +61,8 @@
   background: rgba(0, 0, 0, 0.070);
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+  backdrop-filter: blur(10px);
   margin-bottom: 20px;
   margin-right: 20px;
   width: 260px;
