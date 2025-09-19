@@ -1,11 +1,8 @@
 .about-container {
-  /* max-width: 1000px; */
   box-sizing: border-box;
-  /* width: 100%; */
   height: 100%;
-  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+  overflow-y: auto; 
   padding: 2rem;
-  /* color: #333; */
 }
 
 .bio-section {
@@ -13,14 +10,6 @@
   
 }
 
-/* .bio-content h2 {
-  padding-top: 10px;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 400;
-  padding-bottom: 0.5rem;
-} */
 
 
 
@@ -128,14 +117,34 @@ h2 {
   color: #272727;
 }
 
+@media (max-width: 900px){
+  .bio-content p{
+    padding: 40px 20px;
+  }
+}
+
+
+
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 720px) {
+  .bio-content p{
+    padding: 40px 20px;
+  }
+  
+  html, body {
+    overflow: auto; /* Permitir scroll global en móviles si es necesario */
+  }
+  
   .about-container {
+    height: auto; /* Altura automática en móviles */
+    min-height: 100vh; /* Mínimo altura de viewport */
     padding: 1rem;
+    overflow-y: visible; /* Scroll natural en móviles */
   }
   
   .timeline {
-    padding-left: 1.5rem;
+    padding:0 1rem 20px 1.5rem;
   }
   
   .timeline-marker {
@@ -150,9 +159,10 @@ h2 {
     font-size: 1.8rem;
   }
   
-  .bio-content h2,
+  /* .bio-content h2,
   .timeline-section h2,
   .skills-section h2 {
     font-size: 1.4rem;
-  }
+  } */
+  
 }

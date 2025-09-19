@@ -13,3 +13,9 @@ p{
   font-family: 'agdasima';
   font-size: 20px;
 }
+
+@media (max-width: 720px) {
+  p{
+    padding: 40px 30px;
+  }
+}

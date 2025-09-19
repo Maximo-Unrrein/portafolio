@@ -63,14 +63,22 @@ p {
 .more-details:hover{
   cursor: pointer;
 }
-
+@media (max-width: 900px) {
+  .container-projects{
+    padding-top: 20px;
+  }
+  .titles-and-dates {
+    box-sizing: border-box;
+    padding: 0 15px 2px 3px;
+  }
+}
 /* responsive: en pantallas chicas permití quiebre y menor tamaño */
 @media (max-width: 720px) {
-  .titles-and-dates {
-    padding: 0 20px;
-    gap: 12px;
+  .container-projects{
+    padding-top: 20px;
   }
-  .titles-and-dates a { font-size: 20px; }
-  .singular-projects p { font-size: 13px; }
-  .project-row { gap: 8px; white-space: normal; }
+  .titles-and-dates {
+    box-sizing: border-box;
+    padding: 0 15px 2px 3px;
+  }
 }
