@@ -2,7 +2,7 @@
   <div class="titles-and-dates">
     @for (project of projects; track $index) {
       <div class="project-row">
-        <a href="{{project.demoUrl}}">{{project.title}}</a>
+        <h4>{{project.title}}</h4>
       </div>
       <p>{{project.date.getFullYear()}} | <a class="more-details" (click)="openModal(project)">More Details</a></p>
     }

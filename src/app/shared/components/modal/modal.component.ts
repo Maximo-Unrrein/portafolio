@@ -16,6 +16,13 @@ export class ModalComponent implements OnChanges {
   isVisible: boolean = false;
   isAnimating: boolean = false;
 
+
+  // Variables para el carrusel
+  currentImageIndex: number = 0;
+  isImageModalOpen: boolean = false;
+  currentEnlargedImage: string = '';
+  
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['isOpen']) {
       if (this.isOpen()) {
@@ -49,5 +56,32 @@ export class ModalComponent implements OnChanges {
     if (event.target === event.currentTarget) {
       this.closeModal();
     }
+  }
+
+
+  // Métodos para el carrusel
+  nextImage() {
+    if (this.project()?.images && this.project()!.images.length > 0) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.project()!.images.length;
+    }
+  }
+
+  prevImage() {
+    if (this.project()?.images && this.project()!.images.length > 0) {
+      this.currentImageIndex = (this.currentImageIndex - 1 + this.project()!.images.length) % this.project()!.images.length;
+    }
+  }
+
+  goToImage(index: number) {
+    this.currentImageIndex = index;
+  }
+
+  openImageModal(imageUrl: string) {
+    this.currentEnlargedImage = imageUrl;
+    this.isImageModalOpen = true;
+  }
+
+  closeImageModal() {
+    this.isImageModalOpen = false;
   }
 }

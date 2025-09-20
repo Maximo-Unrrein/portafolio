@@ -20,13 +20,57 @@
             <span class="tech-tag">{{ tech }}</span>
           }
         </div>
+
+        <!-- Carrusel de imágenes -->
+        @if (project()?.images && project()!.images.length > 0) {
+          <div class="carousel">
+            <div class="carousel-main">
+              <img [src]="project()!.images[currentImageIndex]" 
+                   [alt]="project()?.title" 
+                   class="project-image carousel-image"
+                   (click)="openImageModal(project()!.images[currentImageIndex])">
+              
+              @if (project()!.images.length > 1) {
+                <button class="carousel-button prev" (click)="prevImage()">&#10094;</button>
+                <button class="carousel-button next" (click)="nextImage()">&#10095;</button>
+              }
+            </div>
+            
+            <!-- Indicadores del carrusel -->
+            @if (project()!.images.length > 1) {
+              <div class="carousel-indicators">
+                @for (image of project()!.images; track $index; let i = $index) {
+                  <span 
+                    [class.active]="i === currentImageIndex" 
+                    (click)="goToImage(i)">
+                  </span>
+                }
+              </div>
+            }
+          </div>
+        }
         
         <p>{{ project()?.description }}</p>
         <div class="project-links">
-          <a [href]="project()?.demoUrl" target="_blank" class="demo-link">Live demo</a>
-          <a [href]="project()?.githubUrl" target="_blank" class="github-link">Source Code</a>
+          @if( project()?.demoUrl !== ''){
+            <a [href]="project()?.demoUrl" target="_blank" class="demo-link">Live demo</a>
+          }
+          @if( project()?.githubUrl !== ''){
+            <a [href]="project()?.githubUrl" target="_blank" class="github-link">Source Code</a>
+          }
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<!-- Modal para imagen ampliada -->
+@if (isImageModalOpen) {
+  <div class="image-modal-overlay" (click)="closeImageModal()">
+    <div class="image-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closeImageModal()">&times;</button>
+      <img [src]="currentEnlargedImage" [alt]="project()?.title" class="enlarged-image">
+    </div>
+  </div>
+}

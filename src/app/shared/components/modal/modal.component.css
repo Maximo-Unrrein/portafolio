@@ -149,6 +149,133 @@
   background-color: #e5e5e5;
 }
 
+/* Carousel imgs  */
+/* Estilos para el carrusel */
+.carousel {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.carousel-main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.carousel-image:hover {
+  transform: scale(1.02);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.carousel-indicators span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators span.active {
+  background-color: #333;
+}
+
+.carousel-indicators span:hover {
+  background-color: #999;
+}
+
+/* Modal para imagen ampliada */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-content .close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.enlarged-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .modal-content {
