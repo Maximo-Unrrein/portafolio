@@ -8,88 +8,80 @@ import { TimelineItem } from '../../interfaces/time-line-item';
   styleUrl: './about-me.component.css'
 })
 export default class AboutMeComponent {
-  bio = `Soy Técnico Electrónico con una gran pasión por la programación y el desarrollo de software. 
-  Mi background técnico me ha dado una sólida base para resolver problemas complejos y pensar de manera lógica, 
-  habilidades que aplico constantemente en el desarrollo de aplicaciones. 
-  Disfruto creando soluciones innovadoras que combinen hardware y software, 
-  y estoy constantemente aprendiendo nuevas tecnologías para mantenerme actualizado en el campo del desarrollo.`;
+  bio = `My interest in software development began in high school while I was still studying electronics. My first contact with programming was using Arduino with C++. My technical background has given me a strong foundation for solving complex problems and thinking logically. These are skills I apply constantly when building applications. I enjoy creating innovative solutions that combine hardware and software, and I’m always learning new technologies to stay up to date in the field.`;
 
   experiences: TimelineItem[] = [
     {
-      year: '2022 - Presente',
-      title: 'Desarrollador FullStack Freelance',
-      description: 'Desarrollo de aplicaciones web con Angular, Node.js y MongoDB para diversos clientes.',
+      year: 'Jul 2025 - Present',
+      title: 'ARTECH - SAP Consultant',
+      description: 'Professional internship focused on the SAP area. Participation in real technological innovation projects. Development of soft skills in a work context.',
       type: 'experience'
     },
     {
-      year: '2020 - 2022',
-      title: 'Técnico Electrónico Senior',
-      description: 'Reparación y mantenimiento de equipos electrónicos, con enfoque en sistemas embebidos.',
-      type: 'experience'
-    },
-    {
-      year: '2018 - 2020',
-      title: 'Practicante de Desarrollo Embedded',
-      description: 'Desarrollo de firmware para dispositivos IoT en lenguaje C y Python.',
+      year: 'Jul 2022 - Nov 2022',
+      title: 'EXO - Technical Support',
+      description: 'Maintenance and repair of electronic devices such as computers and tablets. Diagnosis and resolution of technical problems.',
       type: 'experience'
     }
   ];
 
   studies: TimelineItem[] = [
     {
-      year: '2021 - 2023',
-      title: 'Certificación en Desarrollo FullStack',
-      description: 'Plataforma: Udemy/Coursera. Tecnologías: Angular, Node.js, MongoDB',
+      year: '2023 - 2025',
+      title: 'Universidad Tecnológica Nacional (UTN)',
+      description: 'Associate Degree in Programming - Location: Buenos Aires, Avellaneda',
       type: 'education'
     },
     {
-      year: '2019',
-      title: 'Curso Avanzado de JavaScript',
-      description: 'Plataforma: Platzi. Especialización en frameworks modernos',
+      year: '2017 – 2022',
+      title: 'Instituto Industrial Luis A. Huergo',
+      description: 'Electronics Technician - Location: Buenos Aires, San Telmo',
       type: 'education'
     },
-    {
-      year: '2015 - 2018',
-      title: 'Técnico en Electrónica',
-      description: 'Instituto Técnico Industrial. Especialización en sistemas digitales',
-      type: 'education'
-    }
+    
   ];
 
-  courses: TimelineItem[] = [ {
-    year: '2023',
-    title: 'Angular Mastery - Advanced Concepts',
-    description: 'Dominio de componentes avanzados, servicios, RxJS y estado global con NgRx',
+  courses: TimelineItem[] = [ 
+  {
+    year: '2025',
+    title: 'Docker: Practical Guide for Developers',
+    description: 'A practical Docker course teaching containerization fundamentals: writing Dockerfiles, building images, volumes and networking, and using containers in local development and CI/CD pipelines. Taught by Fernando Herrera on Devtalles.',
+    type: 'education'
+  },
+  {
+    year: '2025',
+    title: 'NestJS + Microservices: Scalable, Modular Applications',
+    description: 'Advanced course on microservices with NestJS: design patterns for modular systems, inter-service communication, message brokers (e.g., RabbitMQ), and strategies for deploying and scaling microservice architectures. Taught by Fernando Herrera on Devtalles.',
+    type: 'education'
+  },
+  {
+    year: '2025',
+    title: 'Nest: Scalable Backend Development with Node',
+    description: 'Hands-on NestJS training focusing on modular architecture, TypeScript, dependency injection, building robust REST APIs, and integrating databases and authentication for scalable backends. Taught by Fernando Herrera on Devtalles.',
+    type: 'education'
+  },
+  {
+    year: '2024',
+    title: 'Angular: From Zero to Expert',
+    description: 'A practical course focused on Angular modules and architecture, covering component communication, services, routing, and how to structure scalable, modular Angular applications. Taught by Fernando Herrera on Devtalles.',
+    type: 'education'
+  },
+  {
+    year: '2024',
+    title: 'Flutter (Mobile): From Zero to Expert',
+    description: 'Comprehensive mobile development with Flutter: widget-based UI, state management, navigation, platform integration, and the process of building and publishing cross-platform iOS/Android apps. Taught by Fernando Herrera on Devtalles.',
     type: 'education'
   },
   {
     year: '2023',
-    title: 'Node.js & Express Professional',
-    description: 'Desarrollo de APIs RESTful, autenticación JWT y despliegue en producción',
+    title: 'MongoDB: Learn NoSQL Database Fundamentals',
+    description: 'MongoDB course covering document modeling, queries, aggregations, indexing and basic deployment with practical, hands-on labs. Taught by DataBoosters Academy on Udemy.',
     type: 'education'
   },
   {
     year: '2022',
-    title: 'MongoDB Database Developer',
-    description: 'Diseño de esquemas, agregaciones avanzadas y optimización de consultas',
-    type: 'education'
-  },
-  {
-    year: '2022',
-    title: 'TypeScript Pro Foundation',
-    description: 'Tipos avanzados, genéricos, decoradores y patrones de diseño TypeScript',
-    type: 'education'
-  },
-  {
-    year: '2022',
-    title: 'AWS Cloud Practitioner',
-    description: 'Fundamentos de cloud computing, EC2, S3, Lambda y servicios AWS esenciales',
-    type: 'education'
-  },
-  {
-    year: '2021',
-    title: 'React & Redux Complete Guide',
-    description: 'Hooks avanzados, context API, Redux Toolkit y testing con Jest',
+    title: 'Node.js: From Zero to Expert',
+    description: 'An end-to-end Node.js course that teaches asynchronous JavaScript, building RESTful APIs with Express, authentication, error handling, and integrating databases such as MongoDB. Taught by Fernando Herrera on Devtalles.',
     type: 'education'
   }
 ]

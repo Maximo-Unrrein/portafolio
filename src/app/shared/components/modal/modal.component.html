@@ -14,7 +14,7 @@
       <!-- <img [src]="project().image" [alt]="project()?.title" class="project-image"> -->
       
       <div class="project-details">
-        <h3>Tecnologías utilizadas</h3>
+        <h3>Technologies used</h3>
         <div class="technologies">
           @for (tech of project()?.languages; track $index) {
             <span class="tech-tag">{{ tech }}</span>
@@ -23,8 +23,8 @@
         
         <p>{{ project()?.description }}</p>
         <div class="project-links">
-          <a [href]="project()?.demoUrl" target="_blank" class="demo-link">Ver demo</a>
-          <a [href]="project()?.githubUrl" target="_blank" class="github-link">Código fuente</a>
+          <a [href]="project()?.demoUrl" target="_blank" class="demo-link">Live demo</a>
+          <a [href]="project()?.githubUrl" target="_blank" class="github-link">Source Code</a>
         </div>
       </div>
     </div>

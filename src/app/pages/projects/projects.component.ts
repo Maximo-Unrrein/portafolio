@@ -38,8 +38,8 @@ export default class ProjectsComponent {
       description: '',
       date: new Date('2022-08-01'),
       images: [],
-      demoUrl: 'https://www.youtube.com/',
-      githubUrl: ''
+      demoUrl: 'https://maximo-unrrein-tp-1-prog-4-2025-c1.vercel.app/home',
+      githubUrl: 'https://github.com/Maximo-Unrrein/maximo-unrrein_TP1_PROG4-2025-C1'
     }
   ]
 
