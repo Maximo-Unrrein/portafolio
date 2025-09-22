@@ -76,14 +76,14 @@
   margin: 20px 0px 0px 40px;
   font-family: formula regular;
   font-weight: 100;
-  font-size: 40px;
+  font-size: 45px;
 }
 .contents h3{
   /* top - right - bottom - left */
   margin: 0px 0px 80px 40px;
   font-family: 'agdasima', sans-serif;
   font-weight: 200;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .buttons li{
@@ -94,7 +94,7 @@
 
   font-family: 'agdasima';
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 
