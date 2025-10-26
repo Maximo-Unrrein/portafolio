@@ -13,7 +13,7 @@ export default class AboutMeComponent {
   experiences: TimelineItem[] = [
     {
       year: 'Jul 2025 - Present',
-      title: 'ARTECH - SAP Consultant',
+      title: 'ARTECH - SAP Developer',
       description: 'Professional internship focused on the SAP area. Participation in real technological innovation projects. Development of soft skills in a work context.',
       type: 'experience'
     },
